@@ -1,0 +1,32 @@
+syntax = "proto3";
+option go_package = "alltypes/serverstream/proto";
+
+package pb;
+
+message Song {
+  string name = 1;
+  string musid = 3;
+  unit64 number = 3;
+}
+
+service Streamer {
+  rpc AllSongs(AllSongsRequest) returns (stream AllSongsResponse) {}
+  rpc PageSongs(PageSongsRequest) returns (stream PageSongsResponse) {}
+}
+
+message AllSongsRequest {}
+
+message AllSongsResponse {
+  Song song = 1;
+}
+
+message PageSongsRequest {
+  string page_size = 1;
+}
+
+message PageContactsResponse {
+  int32 page_amount = 1;
+  int32 page_size = 2;
+  int32 current_page = 3;
+  repeated Song song = 4;
+}
