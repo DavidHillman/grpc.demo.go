@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="grpc.demo.go" version="0.0.1" name="Demo gRPC Client Written In Go"
+  provider-name="DavidHillman">
+  <requires>
+    <import addon="kodi.binary.global.main" version="1.0.14"/>
+    <import addon="kodi.binary.instance.grpc" version="5.10.3"/>
+  </requires>
+  <extension point="xbmc.grpcclient" library_linux="grpc.demo.go.so.0.0.1"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_US">Demo gRPC Client</summary>
+    <description lang="en_US">Demo gRPC Client</description>
+    <disclaimer lang="en_US">Just has the stubs</disclaimer>
+    <platform>linux</platform>
+  </extension>
+</addon>
